@@ -21,7 +21,11 @@ export async function getRanking() {
     .leftJoin(ratings, eq(ratings.shopId, shops.id))
     .where(eq(shops.status, "live"))
     .groupBy(shops.id)
-    .orderBy(desc(rankingScore), asc(shops.name)); // name breaks ties, so the order never jumps around
+    .orderBy(
+      asc(sql`count(${ratings.stars}) = 0`), // false sorts before true, so Unrated Shops go last
+      desc(rankingScore),
+      asc(shops.name), // name breaks ties, so the order never jumps around
+    );
 
   return rows.map((shop, i) => ({ ...shop, rank: i + 1 }));
 }

@@ -80,3 +80,26 @@ test("many good Ratings beat one 5-star Rating", async () => {
     { rank: 3, name: "Low Rated", averageRating: 2, ratingCount: 10 },
   ]);
 });
+
+test("Unrated Shops come after every rated Shop", async () => {
+  await addLiveShop("A Brand New Shop"); // first alphabetically, so name can't put it last
+  const lowRated = await addLiveShop("Low Rated");
+  const loved = await addLiveShop("Loved");
+  await rate(lowRated.id, 2, 10);
+  await rate(loved.id, 5, 3);
+
+  const ranking = await getRanking();
+
+  expect(
+    ranking.map(({ rank, name, averageRating, ratingCount }) => ({
+      rank,
+      name,
+      averageRating,
+      ratingCount,
+    })),
+  ).toEqual([
+    { rank: 1, name: "Loved", averageRating: 5, ratingCount: 3 },
+    { rank: 2, name: "Low Rated", averageRating: 2, ratingCount: 10 },
+    { rank: 3, name: "A Brand New Shop", averageRating: null, ratingCount: 0 },
+  ]);
+});
