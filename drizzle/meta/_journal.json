@@ -15,6 +15,13 @@
       "when": 1793356285634,
       "tag": "0001_create-shops",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1793361848707,
+      "tag": "0002_create-ratings",
+      "breakpoints": true
     }
   ]
 }
