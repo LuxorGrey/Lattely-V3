@@ -6,8 +6,10 @@ import { ratings, shops } from "@/db/schema";
 const PRIOR_WEIGHT = 5;
 
 export async function getRanking() {
-  const barcelonaAverage = sql`(select avg(${ratings.stars}) from ${ratings})`;
-  const rankingScore = sql`(coalesce(sum(${ratings.stars}), 0) + ${PRIOR_WEIGHT} * ${barcelonaAverage}) / (count(${ratings.stars}) + ${PRIOR_WEIGHT})`;
+  const averageOfAllRatings = sql`(select avg(${ratings.stars}) from ${ratings})`;
+  // Ranking score: the Shop's own average, pulled towards averageOfAllRatings until it has enough Ratings.
+  const rankingScore = sql`(coalesce(sum(${ratings.stars}), 0) + ${PRIOR_WEIGHT} * ${averageOfAllRatings}) / (count(${ratings.stars}) + ${PRIOR_WEIGHT})`;
+  const isUnrated = sql`count(${ratings.stars}) = 0`;
 
   const rows = await db
     .select({
@@ -22,7 +24,7 @@ export async function getRanking() {
     .where(eq(shops.status, "live"))
     .groupBy(shops.id)
     .orderBy(
-      asc(sql`count(${ratings.stars}) = 0`), // false sorts before true, so Unrated Shops go last
+      asc(isUnrated), // false sorts before true, so Unrated Shops go last
       desc(rankingScore),
       asc(shops.name), // name breaks ties, so the order never jumps around
     );
