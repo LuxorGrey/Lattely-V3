@@ -86,7 +86,10 @@ test("Unrated Shops come after every rated Shop", async () => {
   const lowRated = await addLiveShop("Low Rated");
   const loved = await addLiveShop("Loved");
   await rate(lowRated.id, 2, 10);
-  await rate(loved.id, 5, 3);
+  await rate(loved.id, 5, 2);
+  await db
+    .insert(ratings)
+    .values({ memberId: "member-2", shopId: loved.id, stars: 4 }); // 4.666… shows as 4.7
 
   const ranking = await getRanking();
 
@@ -98,7 +101,7 @@ test("Unrated Shops come after every rated Shop", async () => {
       ratingCount,
     })),
   ).toEqual([
-    { rank: 1, name: "Loved", averageRating: 5, ratingCount: 3 },
+    { rank: 1, name: "Loved", averageRating: 4.7, ratingCount: 3 },
     { rank: 2, name: "Low Rated", averageRating: 2, ratingCount: 10 },
     { rank: 3, name: "A Brand New Shop", averageRating: null, ratingCount: 0 },
   ]);
