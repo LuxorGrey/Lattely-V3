@@ -71,7 +71,7 @@ function ShopCard({ shop, big = false }: { shop: RankedShop; big?: boolean }) {
           fill
           className="object-cover"
         />
-        <span className="absolute top-3 left-3 rounded-full bg-cream px-3 py-1 font-heading font-bold">
+        <span className="absolute top-3 left-3 rounded-full border border-espresso bg-cream px-3 py-1 font-heading font-bold">
           No. {shop.rank}
         </span>
       </div>
