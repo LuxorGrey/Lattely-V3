@@ -6,7 +6,7 @@ import { ratings, shops } from "@/db/schema";
 const PRIOR_WEIGHT = 5;
 
 export async function getRanking() {
-  const averageOfAllRatings = sql`(select avg(${ratings.stars}) from ${ratings})`;
+  const averageOfAllRatings = sql`(select avg(${ratings.stars}) from ${ratings} join ${shops} on ${shops.id} = ${ratings.shopId} where ${shops.status} = 'live')`;
   // Ranking score: the Shop's own average, pulled towards averageOfAllRatings until it has enough Ratings.
   const rankingScore = sql`(coalesce(sum(${ratings.stars}), 0) + ${PRIOR_WEIGHT} * ${averageOfAllRatings}) / (count(${ratings.stars}) + ${PRIOR_WEIGHT})`;
   const isUnrated = sql`count(${ratings.stars}) = 0`;

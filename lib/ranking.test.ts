@@ -106,3 +106,29 @@ test("Unrated Shops come after every rated Shop", async () => {
     { rank: 3, name: "A Brand New Shop", averageRating: null, ratingCount: 0 },
   ]);
 });
+
+test("only live Shops' Ratings count towards the average of all Ratings", async () => {
+  const oneStarWonder = await addLiveShop("One Star Wonder");
+  const steadyFavourite = await addLiveShop("Steady Favourite");
+  const [closed] = await db
+    .insert(shops)
+    .values({
+      name: "Closed",
+      slug: "closed",
+      address: "Carrer 2",
+      status: "closed",
+    })
+    .returning();
+  await rate(oneStarWonder.id, 5, 1);
+  await rate(steadyFavourite.id, 4, 3);
+  await rate(closed.id, 1, 10);
+
+  const ranking = await getRanking();
+
+  // Live average = 17 ÷ 4 = 4.25, so One Star Wonder ≈ 4.38 beats Steady Favourite ≈ 4.16.
+  // Counting the closed Shop (27 ÷ 14 ≈ 1.93) would flip them: ≈ 2.44 vs ≈ 2.70.
+  expect(ranking.map((shop) => shop.name)).toEqual([
+    "One Star Wonder",
+    "Steady Favourite",
+  ]);
+});
