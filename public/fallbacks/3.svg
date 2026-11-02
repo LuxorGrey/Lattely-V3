@@ -1,1 +1,31 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300"><rect width="400" height="300" fill="#f0d9c0"/><g transform="translate(152 102) scale(4)" fill="none" stroke="#8f4420" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h13v5a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5V9z"/><path d="M17 11h1.5a2.5 2.5 0 0 1 0 5H17"/><path d="M8 3c0 1.5 1.5 1.5 1.5 3"/><path d="M12 3c0 1.5 1.5 1.5 1.5 3"/></g></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <!-- Window seat with coffee and a croissant -->
+  <rect width="400" height="300" fill="#e6dacb"/>
+  <g stroke="#2b1d14" stroke-width="3" stroke-linejoin="round" stroke-linecap="round">
+    <rect x="60" y="24" width="280" height="168" fill="#f6e3cc"/>
+    <path d="M60 192V120h40V88h50v104z" fill="#d9c8b4"/>
+    <path d="M150 192V70h60v122z" fill="#c9b49c"/>
+    <path d="M210 192v-90h55v90z" fill="#d9c8b4"/>
+    <path d="M265 192V80h75v112z" fill="#c9b49c"/>
+    <path d="M164 84h10v12h-10zM186 84h10v12h-10zM164 110h10v12h-10zM186 110h10v12h-10zM280 96h12v12h-12zM312 96h12v12h-12zM280 124h12v12h-12zM312 124h12v12h-12zM224 118h10v12h-10zM242 118h10v12h-10z" fill="#fffbf4" stroke-width="2"/>
+    <rect x="60" y="24" width="280" height="168" fill="none" stroke-width="6"/>
+    <path d="M200 24v168M60 108h280" fill="none" stroke-width="6"/>
+    <rect x="48" y="190" width="304" height="12" rx="3" fill="#9a6438"/>
+    <path d="M72 168h24l-4 22H76z" fill="#c46a3c"/>
+    <ellipse cx="76" cy="152" rx="7" ry="12" fill="#7a8c5a"/>
+    <ellipse cx="92" cy="150" rx="7" ry="13" fill="#97a86f"/>
+    <ellipse cx="84" cy="142" rx="6" ry="12" fill="#7a8c5a"/>
+    <rect x="20" y="226" width="360" height="16" rx="4" fill="#8f4420"/>
+    <path d="M60 242v58M340 242v58" fill="none" stroke-width="8"/>
+    <path d="M120 194h34v26a7 7 0 0 1-7 7h-20a7 7 0 0 1-7-7zM154 200h6a7 7 0 0 1 0 14h-6" fill="#fffbf4"/>
+    <ellipse cx="137" cy="227" rx="28" ry="5" fill="#fffbf4"/>
+    <path d="M128 184c-4-6 4-9 0-15M142 184c-4-6 4-9 0-15" fill="none" stroke="#6e5a4b" stroke-width="2.5"/>
+    <path d="M236 196h34v24a7 7 0 0 1-7 7h-20a7 7 0 0 1-7-7zM270 202h6a7 7 0 0 1 0 14h-6" fill="#c46a3c"/>
+    <ellipse cx="253" cy="227" rx="28" ry="5" fill="#fffbf4"/>
+    <path d="M168 224c4-18 54-18 58 0z" fill="#e0a45c"/>
+    <path d="M180 220c2-8 8-10 10-12M196 220v-14M212 220c-2-8-8-10-10-12" fill="none" stroke-width="2"/>
+    <rect x="302" y="200" width="16" height="26" rx="5" fill="#fffbf4"/>
+    <path d="M310 200v-18" fill="none" stroke="#5f7146"/>
+    <circle cx="310" cy="176" r="8" fill="#c46a3c"/>
+  </g>
+</svg>

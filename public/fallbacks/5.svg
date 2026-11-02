@@ -1,1 +1,41 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300"><rect width="400" height="300" fill="#dccbb5"/><g transform="translate(152 102) scale(4)" fill="none" stroke="#8f4420" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h13v5a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5V9z"/><path d="M17 11h1.5a2.5 2.5 0 0 1 0 5H17"/><path d="M8 3c0 1.5 1.5 1.5 1.5 3"/><path d="M12 3c0 1.5 1.5 1.5 1.5 3"/></g></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <!-- Menu board and shelves of coffee bags -->
+  <rect width="400" height="300" fill="#f6f0e6"/>
+  <g stroke="#2b1d14" stroke-width="3" stroke-linejoin="round" stroke-linecap="round">
+    <rect x="34" y="40" width="150" height="120" rx="4" fill="#2b1d14" stroke="#9a6438" stroke-width="8"/>
+    <path d="M56 70h60M56 92h86M56 114h50M56 136h74M130 70h28M154 92h10M120 114h38M144 136h16" fill="none" stroke="#f6f0e6" stroke-width="3" stroke-dasharray="1 0"/>
+    <path d="M150 104h14v10a5 5 0 0 1-5 5h-4a5 5 0 0 1-5-5z" fill="none" stroke="#e0a45c" stroke-width="2"/>
+    <g transform="translate(48 -24)">
+    <path d="M300 0v50" fill="none"/>
+    <path d="M284 26h32l-4 22h-24z" fill="#c46a3c"/>
+    <path d="M288 48c-6 16-2 30-8 44M300 48c2 14-4 26 0 40M312 48c6 12 4 24 10 34" fill="none" stroke="#5f7146"/>
+    <ellipse cx="282" cy="70" rx="5" ry="8" fill="#7a8c5a"/>
+    <ellipse cx="280" cy="90" rx="5" ry="8" fill="#97a86f"/>
+    <ellipse cx="302" cy="74" rx="5" ry="8" fill="#97a86f"/>
+    <ellipse cx="318" cy="66" rx="5" ry="8" fill="#7a8c5a"/>
+    <ellipse cx="322" cy="82" rx="5" ry="8" fill="#97a86f"/>
+    </g>
+    <rect x="210" y="120" width="170" height="8" fill="#9a6438"/>
+    <rect x="210" y="190" width="170" height="8" fill="#9a6438"/>
+    <path d="M220 120V90l6-8h26l6 8v30z" fill="#8f4420"/>
+    <circle cx="239" cy="104" r="8" fill="#f6f0e6"/>
+    <path d="M266 120V86l6-8h26l6 8v34z" fill="#e0a45c"/>
+    <circle cx="285" cy="102" r="8" fill="#fffbf4"/>
+    <path d="M314 104h22v16h-22zM312 96h26v8h-26z" fill="#fffbf4"/>
+    <path d="M318 112h14v8h-14z" fill="#6e5a4b"/>
+    <path d="M346 98h24v22h-24z" fill="#c46a3c"/>
+    <path d="M222 190v-36h24v36z" fill="#fffbf4"/>
+    <path d="M222 172h24v18h-24z" fill="#6e5a4b"/>
+    <rect x="218" y="148" width="32" height="8" rx="2" fill="#8f4420"/>
+    <path d="M262 190v-30l6-8h24l6 8v30z" fill="#6e5a4b"/>
+    <circle cx="280" cy="172" r="7" fill="#f6f0e6"/>
+    <path d="M312 190v-28h20v28zM338 190v-34h20v34z" fill="#fffbf4"/>
+    <path d="M312 176h20M338 172h20" fill="none" stroke-width="2"/>
+    <rect y="230" width="400" height="70" fill="#b07a4f"/>
+    <rect y="224" width="400" height="12" fill="#8f4420"/>
+    <path d="M60 196h44v28H60zM104 202h7a8 8 0 0 1 0 16h-7" fill="#fffbf4"/>
+    <path d="M140 204h24l-4 20h-16z" fill="#c46a3c"/>
+    <ellipse cx="146" cy="190" rx="6" ry="12" fill="#7a8c5a"/>
+    <ellipse cx="158" cy="188" rx="6" ry="13" fill="#97a86f"/>
+  </g>
+</svg>
