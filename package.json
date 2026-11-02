@@ -12,6 +12,8 @@
     "test": "docker compose up -d --wait && vitest run",
     "db:generate": "drizzle-kit generate",
     "db:migrate": "drizzle-kit migrate",
+    "db:migrate:neon-development": "DATABASE_URL=\"$(neon connection-string development --project-id silent-forest-50770475)\" drizzle-kit migrate",
+    "db:migrate:neon-production": "DATABASE_URL=\"$(neon connection-string production --project-id silent-forest-50770475)\" drizzle-kit migrate",
     "db:seed": "node --env-file=.env.development scripts/seed.ts"
   },
   "dependencies": {

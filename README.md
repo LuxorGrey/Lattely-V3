@@ -33,11 +33,13 @@ After a restart, run `docker compose up -d` again before `pnpm dev`. The data is
 
 The deployed app uses the Neon project `Lattely-V3` (Frankfurt), which has two branches: `production` for the live site and `development` for Vercel previews. Local dev and tests never touch Neon.
 
-After adding a migration, apply it to both branches. A `DATABASE_URL` set in the terminal wins over `.env.development`:
+After adding a migration, apply it to both branches, `production` before pushing the code that needs it:
 
 ```bash
-DATABASE_URL="$(neon connection-string development --project-id silent-forest-50770475)" pnpm db:migrate
-DATABASE_URL="$(neon connection-string production --project-id silent-forest-50770475)" pnpm db:migrate
+pnpm db:migrate:neon-development
+pnpm db:migrate:neon-production
 ```
 
-The same trick runs `pnpm db:seed` on either branch. The seed only holds real Shops, so it's safe on `production`; never add fake test Shops to it.
+These ask the `neon` CLI (logged in to your account) for the branch's address and set it as `DATABASE_URL`, which wins over `.env.development`. No Neon password is stored in the repo.
+
+The same trick runs the seed on either branch: `DATABASE_URL="$(neon connection-string production --project-id silent-forest-50770475)" pnpm db:seed`. On Neon it only adds the real Shops; sample Ratings go into a `localhost` database only.
