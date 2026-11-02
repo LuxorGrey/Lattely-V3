@@ -1,7 +1,7 @@
 # Lattely
 
 A community ranking of specialty coffee shops in Barcelona. See [CONTEXT.md](CONTEXT.md) for the domain language.
-
+ 
 ## Getting started
 
 You need Node, pnpm and Docker (we use [OrbStack](https://orbstack.dev) on macOS). Make sure OrbStack is running.
